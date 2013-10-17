@@ -1,0 +1,8 @@
+<h1>Dodaj użytkownika</h1>
+
+<?php
+echo $this->Form->create('Subscription');
+echo $this->Form->input('username');
+echo $this->Form->input('ticket');
+echo $this->Form->end('Dodaj');
+?>

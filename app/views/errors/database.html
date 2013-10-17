@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>database.php</title>
+</head>
+<body>
+<pre>
+<span style="font-weight: bold;color: #000000;">&lt;?php</span>
+<span style="font-weight: bold;color: #000000;">class</span><span style="color: #000000;"> DATABASE_CONFIG {</span>
+
+<span style="color: #000000;">	</span><span style="font-weight: bold;color: #000000;">var</span><span style="color: #000000;"> </span><span style="color: #5555ff;">$default</span><span style="color: #000000;"> = </span><span style="color: #000080;">array</span><span style="color: #000000;">(</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'driver'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'mysql'</span><span style="color: #000000;">,				</span><span style="font-style: italic;color: #808080;">// Silnik bazy danych</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'persistent'</span><span style="color: #000000;"> =&gt; </span><span style="font-weight: bold;color: #000000;">false</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'host'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'localhost'</span><span style="color: #000000;">,			</span><span style="font-style: italic;color: #808080;">// Gdzie jest baza?</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'login'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'cakeuser'</span><span style="color: #000000;">,			</span><span style="font-style: italic;color: #808080;">// Nazwa użytkownika bazy danych</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'password'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'fckgwrhqq2'</span><span style="color: #000000;">,	</span><span style="font-style: italic;color: #808080;">// Hasło do bazy danych</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'database'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'cakeacl'</span><span style="color: #000000;">,		</span><span style="font-style: italic;color: #808080;">// Nazwa bazy danych</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'prefix'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">''</span><span style="color: #000000;">,					</span><span style="font-style: italic;color: #808080;">// Pozostawić puste</span>
+<span style="color: #000000;">		</span><span style="font-style: italic;color: #808080;">//'encoding' =&gt; 'utf8',</span>
+<span style="color: #000000;">	);</span>
+
+<span style="color: #000000;">	</span><span style="font-weight: bold;color: #000000;">var</span><span style="color: #000000;"> </span><span style="color: #5555ff;">$test</span><span style="color: #000000;"> = </span><span style="color: #000080;">array</span><span style="color: #000000;">(</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'driver'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'mysql'</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'persistent'</span><span style="color: #000000;"> =&gt; </span><span style="font-weight: bold;color: #000000;">false</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'host'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'localhost'</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'login'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'user'</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'password'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'password'</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'database'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">'test_database_name'</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="color: #dd0000;">'prefix'</span><span style="color: #000000;"> =&gt; </span><span style="color: #dd0000;">''</span><span style="color: #000000;">,</span>
+<span style="color: #000000;">		</span><span style="font-style: italic;color: #808080;">//'encoding' =&gt; 'utf8',</span>
+<span style="color: #000000;">	);</span>
+<span style="color: #000000;">}</span>
+</pre></body>
+</html>

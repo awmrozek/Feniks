@@ -1,0 +1,37 @@
+<div id="mast" class="circlemenu">
+	<ul>
+	<li><?php echo $this->Html->link("Wyloguj", array("controller" => "users", "action" => "logout")); ?></li>
+	<li><?php echo $this->Html->link("Dodaj użytkownika", array("controller" => "users", "action" => "adduser")); ?></li>
+	<li><?php echo $this->Html->link("Powrót do zapisów", array("controller" => "subscriptions", "action" => "index")); ?></li>
+	</ul>
+</div>
+
+<h1>Zarządzanie użytkownikami</h1>
+
+<table>
+	<tr>
+		<th>Akcje</th>
+		<th>Id</th>
+		<th>Nazwa użytkownika</th>
+		<th>Imię i nazwisko</th>
+		<th>Bilet</th>
+		<th>Administrator</th>
+	</tr>
+
+	<?php foreach ($users as $user): ?>
+	<tr>
+		<td class="small"><?php 
+			echo $this->Html->link("[usuń]", array("action" => "remuser", $user['User']['id']), null, "Czy na pewno usunąć użytkownika?");
+			echo $this->Html->link("[edytuj]", array("action" => "edituser"));
+		?></td>
+		<td><?php echo $user['User']['id']?></td>
+		<td><?php echo $user['User']['username']?></td>
+		<td><?php echo $user['User']['first_name']." ".$user['User']['last_name']?>
+		<td><?php echo $user['User']['ticket']?></td>
+		<td class="small"><?php 
+			echo $this->Html->link("[zm] ", array("action" => "chadmin", $user['User']['id']));
+			if (strcmp($user['User']['admin'], "Y")) echo "-"; else echo "Administrator";
+		?></td>
+	</tr>
+	<?php endforeach ?>
+</table>
