@@ -21,7 +21,10 @@ class ArticlesController extends AppController
 
 	public function view($slug)
 	{
-		$article = $this->Articles->findBySlug($slug)->firstOrFail();
+		$article = $this->Articles
+			->findBySlug($slug)
+			->contain('Tags')
+			->firstOrFail();
 		$this->set(compact('article'));
 	}
 
@@ -41,6 +44,12 @@ class ArticlesController extends AppController
 			}
 			$this->Flash->error(__('Unable to add your article.'));
 		}
+		// Get a list of tags.
+		$tags = $this->Articles->Tags->find('list')->all();
+
+		// Set tags to the view context
+		$this->set('tags', $tags);
+
 		$this->set('article', $article);
 	}
 
@@ -49,6 +58,7 @@ class ArticlesController extends AppController
 	{
 		$article = $this->Articles
 			->findBySlug($slug)
+			->contain('Tags')
 			->firstOrFail();
 
 		if ($this->request->is(['post', 'put'])) {
@@ -60,8 +70,40 @@ class ArticlesController extends AppController
 			$this->Flash->error(__('Unable to update your article.'));
 		}
 
+		$tags = $this->Articles->Tags->find('list')->all();
+		$this->set('tags', $tags);
 		$this->set('article', $article);
 	}
+
+
+	public function delete($slug)
+	{
+		$this->request->allowMethod(['post', 'delete']);
+
+		$article = $this->Articles->findBySlug($slug)->firstOrFail();
+		if ($this->Articles->delete($article)) {
+			$this->Flash->success(__('The {0} article has been deleted.', $article->title));
+			return $this->redirect(['action' => 'index']);
+		}
+	}
+
+
+
+	public function tags(...$tags)
+	{
+		// Use the ArticlesTable to find tagged articles.
+		$articles = $this->Articles->find('tagged', [
+				'tags' => $tags
+		])
+			->all();
+
+		// Pass variables into the view template context.
+		$this->set([
+				'articles' => $articles,
+				'tags' => $tags
+		]);
+	}
+
 
 }
 
