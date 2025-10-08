@@ -1,6 +1,8 @@
 # Feniks Submission Tracking System
 
-Do you ever get tired of managing your inbox with countless submissions from students? Do you find that you need to separate submissions from thousands others e-mails? Here is a solution for you! Feniks allows you to track submissions from your students in a convenient way!"
+Do you ever get tired of managing your inbox with countless submissions from students? Do you find that you need to separate submissions from thousands others e-mails?
+
+Here is a solution for you! Feniks allows you to track submissions from your students in a convenient way!
 
 ## Installation
 
