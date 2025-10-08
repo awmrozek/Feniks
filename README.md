@@ -1,4 +1,4 @@
-# Feniks Submission Tracking System
+# Feniks Submission Tracking System with Taiga interface
 
 Do you ever get tired of managing your inbox with countless submissions from students? Do you find that you need to separate submissions from thousands others e-mails?
 
